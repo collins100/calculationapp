@@ -1,27 +1,32 @@
 extends layout
 
 block content
-  h1 Hackathon Starter
-  p.lead A boilerplate for Node.js web applications.
+  h1 Calculation App
+  p.lead An application to calculate the sum of the longest path in a binary tree.
   hr
   .row
     .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
+      h2 Enter Values to form binary tree
+      input.form-control(type='text', name='valuesEntry', id='valuesEntry')
+      button.btn.btn-primary(type='submit' id="submitValues" onclick="enterValues(this);")
+          
+          | Enter
+    
+      label(class='col-md-2 col-form-label font-weight-bold', for='name' id='valuesLabel') 
+
+    //- .col-md-6
+    //-   h2 Enter BinaryTree Root Node
+    //-   input.form-control(type='file', name='rootNode', id='rootNode')
+    //-   button.btn.btn-primary(type='submit' onclick="enterRootNode(this);")
+          
+    //-       | Enter
+  .row
+    .col-md-12
+      h2 Sum of the longest path is:
+      button.btn.btn-primary(type='submit' onclick="generateSum();")
+          | GenerateSum
+      label(class='col-md-2 col-form-label font-weight-bold', for='name' id='longestPathSum')
+      input(type='hidden', name='_csrf', value=_csrf) 
+
+      //- script
+      //-    include api/script.js
